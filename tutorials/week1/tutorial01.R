@@ -51,25 +51,25 @@ AB_ZIM <- AB_ZIM |>
 
 # histogram example
 pdf("AB_ZIM_hist1.pdf")
-ggplot(data = AB_ZIM, mapping = aes(x=age)) +
+ggplot(data = AB_ZIM, aes(x=age)) + 
   geom_histogram() 
 dev.off()
 
 pdf("AB_ZIM_hist2.pdf")
-ggplot(data = AB_ZIM, mapping = aes(x=age)) +
+ggplot(data = AB_ZIM, aes(x=age)) +
   geom_histogram() + 
   scale_y_continuous(breaks = c(20, 40, 60, 80, 100))
 dev.off()
 
 pdf("AB_ZIM_hist3.pdf")
-ggplot(data = AB_ZIM, mapping = aes(x=age)) +
+ggplot(data = AB_ZIM, aes(x=age)) +
   geom_histogram() + 
   scale_y_continuous(breaks = c(20, 40, 60, 80, 100)) +
   facet_wrap(vars(gender))
 dev.off()
 
 pdf("AB_ZIM_hist4.pdf")
-ggplot(data = AB_ZIM, mapping = aes(x=age, fill=gender)) +
+ggplot(data = AB_ZIM, aes(x=age, fill=gender)) +
   geom_histogram() + 
   scale_y_continuous(breaks = c(20, 40, 60, 80, 100)) +
   facet_wrap(vars(gender)) +
@@ -77,7 +77,7 @@ ggplot(data = AB_ZIM, mapping = aes(x=age, fill=gender)) +
 dev.off()
 
 pdf("AB_ZIM_hist5.pdf")
-ggplot(data = AB_ZIM, mapping = aes(x=age, fill=gender)) +
+ggplot(data = AB_ZIM, aes(x=age, fill=gender)) +
   geom_histogram() + 
   scale_y_continuous(breaks = c(20, 40, 60, 80, 100)) +
   facet_wrap(vars(gender)) +
@@ -86,7 +86,7 @@ ggplot(data = AB_ZIM, mapping = aes(x=age, fill=gender)) +
 dev.off()
 
 pdf("AB_ZIM_hist6.pdf")
-ggplot(data = AB_ZIM, mapping = aes(x=age, fill=gender)) +
+ggplot(data = AB_ZIM, aes(x=age, fill=gender)) +
   geom_histogram() + 
   scale_y_continuous(breaks = c(20, 40, 60, 80, 100)) +
   facet_wrap(vars(gender)) +
