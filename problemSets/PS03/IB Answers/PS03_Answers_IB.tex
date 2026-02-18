@@ -86,26 +86,26 @@ The data for this problem set come from the	Canadian Election Study (\href{https
 \begin{verbatim}
 ces2015 <- ces2015 |> filter(discard == "Good quality")
 \end{verbatim}
-\lstinputlisting[language=R, firstline=29, lastline=33]{PS02_Answers_IB.R}
+\lstinputlisting[language=R, firstline=29, lastline=33]{PS03_Answers_IB.R}
 \item Filter the dataset to those participants that answered the question about voting for the past election using \texttt{p\_voted}. Consider respondents who gave a "Yes" answer as having voted, while “No” as not having voted. Treat “Don’t know” and “Refused” as missing.
-\lstinputlisting[language=R, firstline=33, lastline=34]{PS02_Answers_IB.R}
+\lstinputlisting[language=R, firstline=33, lastline=34]{PS03_Answers_IB.R}
 
 \item Create an age variable and group into categories (e.g., $<$30, 30-44, 45-64, 65+). Year of birth is in age (four‑digit year).
-\lstinputlisting[language=R, firstline=36, lastline=42]{PS02_Answers_IB.R}
+\lstinputlisting[language=R, firstline=36, lastline=42]{PS03_Answers_IB.R}
 \end{enumerate}
 
 \subsection*{Data Visualization}
 
 \begin{enumerate}
 	\item Plot turnout rate by age group.
-	\lstinputlisting[language=R, firstline=45, lastline=53]{PS02_Answers_IB.R}
+	\lstinputlisting[language=R, firstline=45, lastline=53]{PS03_Answers_IB.R}
 	\include{turnoutage.pdf}
 	\item Create a density plot of ideology by party, restricting your sample to respondents with non‑missing left–right self‑placement (0–10 scale) and those that intended to vote for a main party (e.g., Liberal, Conservative, NDP, Bloc in Quebec, and Green).
-	\lstinputlisting[language=R, firstline=56, lastline=68]{PS02_Answers_IB.R}
+	\lstinputlisting[language=R, firstline=56, lastline=68]{PS03_Answers_IB.R}
 	\include{density.pdf}
 	\item Produce histogram counts of turnout by income (\texttt{income\_full}), faceted by province.
 	Can't figure out how to make this work properly- I suspect I'm missing some fundamental piece of this. Will come to office hours to figure it out. In the meantime, enjoy this abomination that's about as far as I got.
-	\lstinputlisting[language=R, firstline=69, lastline=83]{PS02_Answers_IB.R}
+	\lstinputlisting[language=R, firstline=69, lastline=83]{PS03_Answers_IB.R}
 	\include{turnoutincome.pdf}
 	\item Create your own reusable custom theme. Apply your theme to one of the previous plots and add:
 	\begin{enumerate}
