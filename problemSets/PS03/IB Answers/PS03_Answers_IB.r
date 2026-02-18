@@ -32,17 +32,14 @@ ces2015 <- ces2015 |> filter(discard == "Good quality")
 
 ces2015 <- ces2015 |> filter(p_voted == "Yes" | p_voted == "No")
 
-ces2015 <- ces2015 |> mutate(as.numeric(p_voted))
-
+#numeric stuff
 ces2015$age <- as.numeric(as.character(ces2015$age))
-
 ageconverter <- function(age){
   2015-age
 }
 
 ces2015["age_group"] <- ageconverter(ces2015$age)
 ces2015["age_group"] = cut(ces2015$age_group, breaks=c(0,30, 45, 65,1000))
-
 
 
 pdf("turnoutage.pdf")
