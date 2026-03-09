@@ -73,7 +73,7 @@ ggsave(figure2, filename = "figures/figure2.pdf", device = cairo_pdf,
 # simplify this graphic by just taking a subset of them
 example_data_subset <- example_data |>
   sample_n(500)
-  
+
 figure3 <- ggplot(example_data_subset, aes(x = y1, y = x2, color = y2)) +
   geom_point(size = 1, alpha = 0.75) + 
   geom_smooth(method = "lm", color = "#85144A", linewidth = 2) +
@@ -86,3 +86,5 @@ figure3 <- ggplot(example_data_subset, aes(x = y1, y = x2, color = y2)) +
 
 ggsave(figure3, filename = "figures/figure3.pdf", device = cairo_pdf,
        width = 6, height = 4, units = "in", bg = "transparent")
+
+

@@ -1,0 +1,61 @@
+\documentclass[]{article}
+
+%opening
+\title{MTA North Delay Data Visualization}
+\author{Ivy Birchall}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Executive Summary}
+The MTA North is a United States commuter railroad system that carries millions of New York City residents each year, and also other people who I must admit care less about since they're not from my city. The railroad system stretches across New York state and Conneticut, and, like any US railroad system, has delays (I acknowledge other railroad systems also have delays, but allow me this spot of levity in the nightmare that is American Public Transit). I wanted to examine the different ways in which the our railroad systems fail us, the causes thereof, and any patterns emerging from the chaos.
+
+\vspace{.25cm}
+
+
+
+\section{Data Background}
+The dataset includes all delays and service cancellations on the MTA North. It was found publically available at data.gov, and is under an open source license. It has been gathered since 2012 to 2026.
+https://catalog.data.gov/dataset/mta-metro-north-delays-beginning-2012
+\vspace{.25cm}
+
+
+
+\section{Data Cleaning}
+I selected only the data I would use and discarded the unecessary columns. 
+Only some of the data contained "Minutes Late", as cancellations, bus subsitutions, and terminations did not have an actual time. I created a seperate dataset which removed all the rows that contained N/As.
+
+\lstinputlisting[language=R, firstline=41, lastline=51]{final_project_IB.R}
+
+I made a custom theme in a fashion similar to the example project.
+
+
+\lstinputlisting[language=R, firstline=30, lastline=36]{final_project_IB.R}
+
+\vspace{.25cm}
+
+
+\section{Average Delays}
+At first I wanted to establish a baseline of delays: What causes of delays are there, and what is the average time for a delay?
+\include{Average Delay.pdf}
+\lstinputlisting[language=R, firstline=58, lastline=68]{final_project_IB.R}
+
+The graph shows that police incidents are far and away the longest on average, causing up to 15 minute delays on average, but that even the best case scenario with a delay, a capital project, can cause a full 7 minutes of delay time.
+
+
+\section{Lateness Over Time}
+Next I wanted to see how delay times might have changed over the last few years. I set up a line graph showing how the total minutes of delay each day had changed over time.
+\include{ Minutes Late Over Time.pdf}
+\lstinputlisting[language=R, firstline=72, lastline=82]{final_project_IB.R}
+As the line graph alone was quite chaotic, I added a regression line to see if there was a pattern, and indeed, there has been, over the last few years, a slow average increase in the amount of time lost to delays. 
+
+
+\section{Problems by Month}
+Lastly, I wanted to see the variation of individual incidents by month, to see if certain times of year leant themselves to increased incidents. I also subdivided this chart by type of incidence, as previous charts only looked at delay time, which excluded cancellations, subsitutions, and terminations.
+\include{status_by_month.pdf}
+\lstinputlisting[language=R, firstline=85, lastline=101]{final_project_IB.R}
+The chart shows that incidents tend to be a little more common around the summer and significantly more common around November. Cancellations, specifically, seem notably more common around the warmer months than the colder months.  
+
+\end{document}
